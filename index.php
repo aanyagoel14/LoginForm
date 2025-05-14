@@ -1,8 +1,8 @@
 <html>
   <head>
-    <title>PHP Test</title>
+    <title>PHP-01</title>
   </head>
+  Assignment 1
   <body>
-    <?php echo '<p>Hello World</p>'; ?> 
 
 </html>
