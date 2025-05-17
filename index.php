@@ -7,6 +7,8 @@
 
     <h1>Assignment 1</h1>
 
-    <p><a href= "/login.php">Cick here to login</p>
+    <p>Welcome, <?=$_SESSION['username'] ?>!</p>
+
+    <!-- <p><a href= "/login.php">Cick here to login</p> -->
 
 </html>
