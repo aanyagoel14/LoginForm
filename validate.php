@@ -6,17 +6,19 @@ $valid_password = "password";
 
 if (isset($_REQUEST['username']) && isset($_REQUEST['password'])) {
     $username = $_REQUEST['username'];
-    $SESSION['username'] = $username;
+    $_SESSION['username'] = $username;
     $password = $_REQUEST['password'];
 
     if ($valid_username == $username && $valid_password == $password) {
-        header("Location: /index.php");;
+      $_SESSION['authenticated'] = 1; 
+      header("Location: index.php");
     } else {
         if (!isset($_SESSION['failed_attempts'])) {
             $_SESSION['failed_attempts'] = 1;
         } else {
             $_SESSION['failed_attempts'] = $_SESSION['failed_attempts'] + 1;
         }
+      //header- redirect to login.php
         echo "This is unsuccessful attempt number: " . $_SESSION['failed_attempts'];
     }
 }

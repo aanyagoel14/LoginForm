@@ -1,4 +1,7 @@
-<html>
+<?php
+session_start();
+?>
+<!DOCTYPE html>
   <head>
     <title>PHP-01</title>
   </head>
@@ -9,6 +12,9 @@
 
     <p>Welcome, <?=$_SESSION['username'] ?>!</p>
 
-    <!-- <p><a href= "/login.php">Cick here to login</p> -->
+  </body>
 
+  <footer>
+    <p><a href= "/login.php">Cick here to login</a></p>
+  </footer>
 </html>
