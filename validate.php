@@ -19,10 +19,8 @@ if (isset($_REQUEST['username']) && isset($_REQUEST['password'])) {
         } else {
             $_SESSION['failed_attempts'] = $_SESSION['failed_attempts'] + 1;
         }
-      //header- redirect to login.php
         header("Location: login.php?error=1&attempts=" . $_SESSION['failed_attempts']);
         exit();
-
     }
 }
 ?>
