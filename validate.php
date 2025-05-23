@@ -12,6 +12,7 @@ if (isset($_REQUEST['username']) && isset($_REQUEST['password'])) {
     if ($valid_username == $username && $valid_password == $password) {
       $_SESSION['authenticated'] = 1; 
       header("Location: index.php");
+      exit();
     } else {
         if (!isset($_SESSION['failed_attempts'])) {
             $_SESSION['failed_attempts'] = 1;
@@ -19,7 +20,9 @@ if (isset($_REQUEST['username']) && isset($_REQUEST['password'])) {
             $_SESSION['failed_attempts'] = $_SESSION['failed_attempts'] + 1;
         }
       //header- redirect to login.php
-        echo "This is unsuccessful attempt number: " . $_SESSION['failed_attempts'];
+        header("Location: login.php?error=1&attempts=" . $_SESSION['failed_attempts']);
+        exit();
+
     }
 }
 ?>
